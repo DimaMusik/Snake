@@ -1,0 +1,7 @@
+// Main File
+
+import { Game } from './Game.js';
+
+const game = new Game();
+
+await game.init();
