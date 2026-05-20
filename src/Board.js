@@ -6,13 +6,12 @@ export class Board {
         this.rows = 22;
         this.cols = 22;
         this.itemSize = 20;
-        this.matrix = this.makeMatrix
+        this.matrix = this.makeMatrix()
         this.makeDefaultBorder()
-        console.table(this.matrix)
         this.walls = [];
     }
 
-    get makeMatrix() {
+     makeMatrix() {
         return Array.from({length: this.rows}, () =>
             Array.from({length: this.cols}, () => null)
         );

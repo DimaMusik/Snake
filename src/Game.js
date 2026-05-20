@@ -34,7 +34,7 @@ export class Game {
 
         //Score
         this.score = 0;
-        this.bestScore = 0;
+        this.bestScore = Number(localStorage.getItem('bestScore')) || 0;
 
 
         // GUI
@@ -92,6 +92,7 @@ export class Game {
 
         this.bindButtons();
         this.bindControls();
+        this.updateScoreView();
 
         this.render.drawBoard();
 
@@ -108,6 +109,7 @@ export class Game {
             if (this.mode === 'portal') {
                 this.teleportSnake();
             }
+
 
             const modeRules = this.modeList[this.mode];
 
@@ -246,6 +248,7 @@ export class Game {
 
         if (this.score > this.bestScore) {
             this.bestScore = this.score;
+            localStorage.setItem('bestScore', String(this.bestScore));
         }
 
         this.updateScoreView();
