@@ -119,6 +119,7 @@ export class Game {
 
             if (modeRules.canDie && this.snake.snakeDied) {
                 this.isPlaying = false;
+                this.saveBestScore();
                 this.resetGame();
                 this.showMenu();
                 return;
@@ -248,10 +249,13 @@ export class Game {
 
         if (this.score > this.bestScore) {
             this.bestScore = this.score;
-            localStorage.setItem('bestScore', String(this.bestScore));
         }
 
         this.updateScoreView();
+    }
+
+    saveBestScore() {
+        localStorage.setItem('bestScore', String(this.bestScore));
     }
 
     resetGame() {
