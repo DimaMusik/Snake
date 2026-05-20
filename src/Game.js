@@ -255,7 +255,11 @@ export class Game {
     }
 
     saveBestScore() {
-        localStorage.setItem('bestScore', String(this.bestScore));
+        const savedBestScore = Number(localStorage.getItem('bestScore')) || 0;
+
+        if (this.bestScore > savedBestScore) {
+            localStorage.setItem('bestScore', String(this.bestScore));
+        }
     }
 
     resetGame() {
