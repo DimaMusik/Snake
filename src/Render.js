@@ -29,7 +29,7 @@ export class Render {
         for (const wall of this.board.walls) {
             this.wallGraphics
                 .rect(wall.x * size, wall.y * size, size, size)
-                .fill('#777777');
+                .fill(this.board.element.color.border);
         }
     }
 
