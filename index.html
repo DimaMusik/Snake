@@ -7,9 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main id='main'>
+<main id="main">
+    <section id="game-field"></section>
+    <section id="gui">
+        <div class="scores">
+            <h1>Snake Game</h1>
+            <p>Best Score: <span id="best-score">0</span></p>
+            <p>Current Score: <span id="current-score">0</span></p>
+        </div>
 
-    </main>
-    <script type="module" src="src/main.js"></script>
+        <div class="modes">
+            <h2>Game Mode</h2>
+            <label><input type="radio" name="mode" value="classic" checked> Classic</label>
+            <label><input type="radio" name="mode" value="god">No Die</label>
+            <label><input type="radio" name="mode" value="walls"> Walls</label>
+            <label><input type="radio" name="mode" value="portal"> Portal</label>
+            <label><input type="radio" name="mode" value="speed"> Speed</label>
+        </div>
+
+        <div class="actions">
+            <button id="play-button" type="button">Play</button>
+            <button id="menu-button" type="button" hidden>Menu</button>
+            <button id="exit-button" type="button">Exit</button>
+        </div>
+    </section>
+</main>
+
+<script src="https://pixijs.download/v8.18.1/pixi.js"></script>
+<script type="module" src="./src/main.js"></script>
 </body>
 </html>

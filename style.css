@@ -3,3 +3,97 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    min-height: 100vh;
+    background: #077482;
+    color: #f5f7fa;
+    font-family: Arial, sans-serif;
+}
+
+#main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 24px;
+}
+
+#gui {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.scores,
+.modes,
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #55d292;
+}
+
+.scores p:nth-child(2) {
+    padding: 10px 10px;
+    background-color: #075e6c;
+}
+
+.scores p:nth-child(3) {
+    padding: 10px 10px;
+    background-color: #074e5c;
+}
+
+#game-status {
+    color: #2dd4bf;
+    font-weight: 700;
+}
+
+.actions {
+    flex-direction: row;
+    justify-content: center;
+
+    button {
+        width: 50%;
+    }
+}
+
+.modes {
+    padding: 12px;
+    background: #195756;
+}
+
+.modes label {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 12px;
+    border: 0;
+    background: #14b8a6;
+    font-size: 22px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+button:hover {
+    background: #2dd4bf;
+}
+
+button:disabled {
+    cursor: default;
+    opacity: 0.55;
+}
+
+#game-field canvas {
+    display: block;
+}
